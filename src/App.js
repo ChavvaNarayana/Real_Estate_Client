@@ -1,11 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
 
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import IndexPage from './components/IndexPage';
 function App() {
   return (
-    <div className="App">
-      <h1>Hi Team 14</h1>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<IndexPage/> } />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
