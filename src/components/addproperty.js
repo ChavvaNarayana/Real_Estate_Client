@@ -10,7 +10,7 @@ const Addproperty=(props)=>{
     return(
         <>
         <div>
-        
+            <Basicinfo/>
         </div>
         </>
     )
