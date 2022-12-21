@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,100&display=swap');
+
+#root {
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.BasicInfo1 {
+    position: absolute;
+    right: 740px;
+    padding-left: 15px;
+    box-sizing: border-box;
+
+    background: transparent;
+    box-shadow: none;
+    border-radius: 500px;
+    width: 200px;
+    height: 60px;
+
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+
+}
+
+.BasicInfo1 p:first-child {
+    display: inline-block;
+    background: #E1F9F4;
+    color: #A6A6A6;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.BasicInfo1 p:nth-child(2) {
+    display: inline-block;
+    color: #A6A6A6;
+}
+
+
+.GeneralInfo1 {
+    position: absolute;
+    right: 240px;
+    padding-left: 15px;
+    background: #6AB4F8;
+    box-shadow: 0px 13px 25px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    border-radius: 500px;
+    width: 200px;
+    height: 60px;
+
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.GeneralInfo1 p:first-child {
+    display: inline-block;
+    background: white;
+    color: black;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.GeneralInfo1 p:nth-child(2) {
+    display: inline-block;
+    color: white;
+}
+
+.LocationInfo1 {
+    position: absolute;
+    left: 750px;
+    padding-left: 15px;
+    background: #6AB4F8;
+    box-shadow: 0px 13px 25px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    border-radius: 500px;
+    width: 200px;
+    height: 60px;
+
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.LocationInfo1 p:first-child {
+    display: inline-block;
+    background: white;
+    color: black;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.LocationInfo1 p:nth-child(2) {
+    display: inline-block;
+    color: white;
+}
