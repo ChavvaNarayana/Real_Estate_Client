@@ -1,0 +1,51 @@
+.sidebarconatiner {
+    background-color: #E1F9F4;
+    width: 317px;
+}
+
+.propert {
+    color: #2289ff;
+}
+
+.home {
+    color: #2289ff;
+    margin-right: 30px;
+}
+
+.sideoption .property {
+    color: #2289ff;
+}
+
+.logooption {
+    margin-left: 30px;
+    margin-top: 40px;
+}
+
+.sidesubcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.property {
+    color: #2289ff;
+    
+}
+
+.navvalue {
+    margin-left: 28px;
+
+}
+
+.navvalue {
+    color: black;
+}
+
+
+.sideoption {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    margin-left: 25px;
+}
