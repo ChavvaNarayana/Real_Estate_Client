@@ -1,7 +1,10 @@
 import AddProperty from "./components/AddProperty/AddProperty";
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-// import IndexPage from './components/IndexPage';
+
+import IndexPage from './components/IndexPage';
+import Signin from './components/Signin';
+
 function App() {
   return (
     <>
@@ -11,6 +14,7 @@ function App() {
           <Route path='/' element={<AddProperty />} />
         </Routes>
       </BrowserRouter>
+  
     </>
   );
 }
