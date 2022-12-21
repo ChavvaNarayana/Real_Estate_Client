@@ -13,8 +13,68 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
         e.preventDefault();
 
         // submit data can be implemented later
-    }
+        // issue with tokens can be reolved later
 
+        const addProperty = (e) => {
+            e.preventDefault();
+
+            axios.post('http://localhost:5000/api/property', formData,
+                {
+                    headers: {
+                        authorization: localStorage.getItem('token')
+                    }
+
+                })
+                .then(function (response) {
+                    console.log(response)
+                    console.log(response.data);
+                    alert(response.data.message);
+                    setFormData({
+                        propertyType: "",
+                        negotable: "",
+                        price: '',
+                        ownership: "",
+                        propertyAge: "",
+                        propertyApproved: "",
+                        propertyDescription: "",
+                        bankLoan: "",
+                        length: '',
+                        breath: '',
+                        totalArea: '',
+                        areaUnit: "",
+                        noOfBHK: '',
+                        noOfFloor: '',
+                        attached: "",
+                        western: "",
+                        furnished: "",
+                        carParking: "",
+                        lift: "",
+                        electricity: "",
+                        facing: "",
+                        name: "",
+                        mobile: '',
+                        postedBy: "",
+                        saleType: "",
+                        featuredPackage: "",
+                        ppdPackage: "",
+                        email: "",
+                        city: "",
+                        area: "",
+                        pincode: '',
+                        address: "",
+                        landmark: "",
+                        latitude: "",
+                        longitude: ""
+                    })
+                    if (response.data.message === "success") {
+                        navigate('/dashboard')
+                    }
+                })
+                .catch(function (error) {
+                    alert(error)
+                });
+        }
+    }
 
     const token = localStorage.getItem("token");
     if (token === undefined) {
