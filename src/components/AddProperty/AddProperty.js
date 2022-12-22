@@ -3,7 +3,7 @@ import BasicInfo from "./BasicInfo"
 import GeneralInfo from "./GeneralInfo"
 import LocationInfo from "./LocationInfo"
 import PropertyDetails from "./PropertyDetails"
-
+import { Navigate } from "react-router-dom";
 const AddProperty = () => {
 
     const [formData, setFormData] = useState({
@@ -50,12 +50,14 @@ const AddProperty = () => {
         GenralInfo: false,
         LocationInfo: false
     });
+    let token = localStorage.getItem('token')
     
     return <>
-        {isTogle.BasicInfo && <BasicInfo formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
-        {isTogle.propertyDetails && <PropertyDetails formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
-        {isTogle.GeneralInfo && <GeneralInfo formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
-        {isTogle.LocationInfo && <LocationInfo formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
+        { token ? <div>{ isTogle.BasicInfo && <BasicInfo formData={ formData } setFormData={ setFormData } isTogle={ isTogle } setIsTogle={ setIsTogle } /> }
+        { isTogle.propertyDetails && <PropertyDetails formData={ formData } setFormData={ setFormData } isTogle={ isTogle } setIsTogle={ setIsTogle } /> }
+        { isTogle.GeneralInfo && <GeneralInfo formData={ formData } setFormData={ setFormData } isTogle={ isTogle } setIsTogle={ setIsTogle } /> }
+            { isTogle.LocationInfo && <LocationInfo formData={ formData } setFormData={ setFormData } isTogle={ isTogle } setIsTogle={ setIsTogle } /> }</div> : <Navigate to="/login"/>}
+        
     </>
 }
 
