@@ -1,0 +1,53 @@
+.headercontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 20px;
+}
+
+.userid {
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+    color: #b4b4c6;
+}
+
+.userid:hover {
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 25px;
+    color: #9494a2;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    color: #b4b4c6;
+}
+
+.dropdown-content {
+    display: none;
+    box-sizing: border-box;
+    padding-top: 7px;
+    height: 10px;
+    text-align: end;
+    position: sticky;
+    width: 100px;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.headerbtmline {
+    background: #e1f9f4;
+    margin-top: 30px;
+    height: 3px;
+}
