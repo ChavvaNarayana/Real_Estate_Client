@@ -21,19 +21,15 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                             <p>Basic Info</p>
                         </div>
 
-
                         <div className="PropertyDetail">
                             <p>2</p>&nbsp;&nbsp;
                             <p>Property  Detail</p>
                         </div>
 
-
-
                         <div className="GeneralInfo">
                             <p>3</p>&nbsp;&nbsp;
                             <p>General Info</p>
                         </div>
-
 
                         <div className="LocationInfo">
                             <p>3</p>&nbsp;&nbsp;
