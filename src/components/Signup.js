@@ -1,12 +1,19 @@
-import React, { useState } from 'react'
-import { useState } from "react";
-const Signup =()=> {
+import React, { useState } from 'react';
+import './src/components/Signup.css';
+import axios from "axios";
+const Signup = async()=> {
   const[data,setData] = useState({
     username:'',
     email:'',
     password:'',
     confirmPassword:'',
   })
+  const res = await axios.post(
+    ``,
+    data,
+    {
+      withCredentials: true,
+    });
   const{username,email}=data;
   const{password,confirmPassword} = Number;
   const changeHandler = e =>{
@@ -15,13 +22,14 @@ const Signup =()=> {
   }
   const submitHandler = e =>{
     e.preventDefault();
-   if(password==confirmPassword){
+   if(password===confirmPassword){
     console.log(data);
    }
    else {
     console.log("Passwords not matching")
    }
   }
+
   return (
     <div className="sign-up-parent">
       <div className="sign-up-form-container">
