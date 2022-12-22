@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-
-import React, { useState } from 'react';
 import './Signup.css';
 import './Signup.css';
 import axios from "axios";
