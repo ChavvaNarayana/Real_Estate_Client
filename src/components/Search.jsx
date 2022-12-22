@@ -2,6 +2,7 @@ import React from 'react'
 import { BiSearch } from 'react-icons/bi'
 import { RxDividerVertical } from 'react-icons/rx'
 import { AiOutlinePlus } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 function Search({ setId, ppdId}) {
   function handleChange(e) {
     setId(e.target.value.toUpperCase())
@@ -19,7 +20,7 @@ function Search({ setId, ppdId}) {
           placeholder='Search PPD ID' /> <RxDividerVertical color='#6AB4F8' size={40}opacity={0.3} /> <BiSearch color='#6AB4F8' size={24}opacity={0.8} />
       </div>
       <div className="add-property">
-        <button className='add-btn'> <AiOutlinePlus/> Add Property</button>
+        <Link to='/add'><button className='add-btn'> <AiOutlinePlus /> Add Property</button></Link>
       </div>
 
     </div>
