@@ -18,7 +18,9 @@ header,
 header {
     border-bottom: 0.2rem solid #E1F9F4;
 }
-
+.head {
+    height: 10vh;
+}
 .flex {
     display: flex;
 }
@@ -57,11 +59,11 @@ header {
 
 
 .lg-font {
-    font-weight: lighter;
+    font-weight: 100;
     font-size: 1.5rem;
     line-height: 2rem;
     color: #B4B4C6;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 
@@ -78,6 +80,7 @@ header {
     height: 80%;
     font-size: small;
     opacity: 0.8;
+    margin-bottom: 0;
 }
 
 #search::placeholder {
@@ -122,6 +125,9 @@ header {
 
 td {
     text-align: left;
+    color: #1F1F1F;
+    font-weight: 600;
+    opacity: 0.8;
 
 }
 
