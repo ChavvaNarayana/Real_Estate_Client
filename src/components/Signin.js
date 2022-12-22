@@ -25,11 +25,13 @@ const Signin =  () => {
       })
       .catch(err => console.log(err))
     
+
   }
   return (
     <div className="sign-up-parent">
       <div className="sign-up-form-container">
         <center>
+
           <h1 style={ { color: "#4c57b6" } }>Logo</h1>
           <p>Create New Account</p>
           <form onSubmit={ submitHandler }>
@@ -37,6 +39,7 @@ const Signin =  () => {
             <input type="password" name='password' placeholder='password' value={ data.password } onChange={ changeHandler } /><br />
             <button type="submit" className="submit-button">Sign In</button><br />
             <Link to='/register'>SignUp</Link>
+
           </form>
         </center>
       </div>

@@ -21,19 +21,15 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                             <p>Basic Info</p>
                         </div>
 
-
                         <div className="PropertyDetail">
                             <p>2</p>&nbsp;&nbsp;
                             <p>Property  Detail</p>
                         </div>
 
-
-
                         <div className="GeneralInfo">
                             <p>3</p>&nbsp;&nbsp;
                             <p>General Info</p>
                         </div>
-
 
                         <div className="LocationInfo">
                             <p>3</p>&nbsp;&nbsp;
@@ -171,11 +167,8 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                         latitude: "",
                                         longitude: ""
                                     })
-                                }
+                                }}>Cancel</button>
 
-                                }>
-                                    Cancel
-                                </button>
                                 <button className="save"
                                     onClick={(e) => {
                                         e.preventDefault();
@@ -189,12 +182,10 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
                                             })
                                             console.log(formData, isTogle)
-                                            navigate('/')
+                                            navigate('/add')
                                         }
-                                    }}
-                                >
-                                    Save &#38; continue
-                                </button>
+                                    }}>Save &#38; continue</button>
+
                             </div>
 
                         </form>

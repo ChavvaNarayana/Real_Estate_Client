@@ -51,14 +51,21 @@ const AddProperty = () => {
         LocationInfo: false
     });
     let token = localStorage.getItem('token')
-    
+
     return <>
-        { token ? <div>{ isTogle.BasicInfo && <BasicInfo formData={ formData } setFormData={ setFormData } isTogle={ isTogle } setIsTogle={ setIsTogle } /> }
-        { isTogle.propertyDetails && <PropertyDetails formData={ formData } setFormData={ setFormData } isTogle={ isTogle } setIsTogle={ setIsTogle } /> }
-        { isTogle.GeneralInfo && <GeneralInfo formData={ formData } setFormData={ setFormData } isTogle={ isTogle } setIsTogle={ setIsTogle } /> }
-            { isTogle.LocationInfo && <LocationInfo formData={ formData } setFormData={ setFormData } isTogle={ isTogle } setIsTogle={ setIsTogle } /> }</div> : <Navigate to="/login"/>}
-        
+        {
+            token ?
+                <div>
+                    {isTogle.BasicInfo && <BasicInfo formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
+                    {isTogle.propertyDetails && <PropertyDetails formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
+                    {isTogle.GeneralInfo && <GeneralInfo formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
+                    {isTogle.LocationInfo && <LocationInfo formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
+                </div>
+                : <Navigate to="/login" />
+        }
+
     </>
+
 }
 
 export default AddProperty;
