@@ -4,17 +4,19 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import IndexPage from './components/IndexPage';
 import Signin from './components/Signin';
-
+import Signup from './components/Signup'
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          {/* <Route path='/' element={<IndexPage />} /> */}
-          <Route path='/' element={<AddProperty />} />
+          <Route path='/' element={ <IndexPage /> } />
+          <Route path='/add' element={ <AddProperty /> } /> 
+          <Route path="/login" element={ <Signin /> } />
+          <Route path='/register' element={<Signup/>} />
         </Routes>
       </BrowserRouter>
-  
+
     </>
   );
 }
