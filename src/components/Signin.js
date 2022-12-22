@@ -20,7 +20,7 @@ const Signin=()=> {
   }
   const submitHandler = e =>{
     e.preventDefault();
-   if(password==confirmPassword){
+   if(data.password === data.confirmPassword){
     console.log(data);
    }
    else {
