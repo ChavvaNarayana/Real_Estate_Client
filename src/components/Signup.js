@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import React, { useState } from 'react';
 import './Signup.css';
+import './Signup.css';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 const apiUrl = 'http://localhost:5000/register'
