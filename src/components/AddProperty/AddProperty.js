@@ -53,6 +53,7 @@ const AddProperty = () => {
     let token = localStorage.getItem('token')
 
     return <>
+
         {
             token ?
                 <div>

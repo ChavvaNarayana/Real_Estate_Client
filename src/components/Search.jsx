@@ -17,7 +17,9 @@ function Search({ setId, ppdId}) {
           type="text"
           name="search"
           id="search"
-          placeholder='Search PPD ID' /> <RxDividerVertical color='#6AB4F8' size={40}opacity={0.3} /> <BiSearch color='#6AB4F8' size={24}opacity={0.8} />
+          placeholder='Search PPD ID' />
+        <RxDividerVertical color='#6AB4F8' size={ 40 } opacity={ 0.3 } />
+        <BiSearch className='cursor-pointer' color='#6AB4F8' size={ 24 } opacity={ 0.8 } />
       </div>
       <div className="add-property">
         <Link to='/add'><button className='add-btn'> <AiOutlinePlus /> Add Property</button></Link>
