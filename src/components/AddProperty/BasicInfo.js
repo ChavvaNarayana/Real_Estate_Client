@@ -1,6 +1,8 @@
 import './BasicInfo.css'
 import Menubar from '../Dashboard/menubar';
 import { useNavigate } from 'react-router-dom';
+import Action from '../Dashboard/action';
+
 function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
     const navigate = useNavigate()
     return (
@@ -10,6 +12,7 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                     <Menubar />
                 </div>
                 <div className="right">
+                    <Action />
                     <h4 className="addANewProperty">
                         Add new Property
                     </h4>

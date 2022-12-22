@@ -13,8 +13,8 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
         const addProperty = (e) => {
             e.preventDefault();
-
-            axios.post('http://localhost:5000/api/property', formData, {
+            formData.email = localStorage.get('email')
+            axios.post('http://localhost:5000/add', formData, {
                 headers: {
                     authorization: localStorage.getItem('token')
                 }

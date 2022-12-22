@@ -47,25 +47,27 @@ const AddProperty = () => {
     const [isTogle, setIsTogle] = useState({
         BasicInfo: true,
         propertyDetails: false,
-        GenralInfo: false,
+        GeneralInfo: false,
         LocationInfo: false
     });
     let token = localStorage.getItem('token')
 
-    return <>
-        {
-            token ?
-                <div>
-                    {isTogle.BasicInfo && <BasicInfo formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
-                    {isTogle.propertyDetails && <PropertyDetails formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
-                    {isTogle.GeneralInfo && <GeneralInfo formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
-                    {isTogle.LocationInfo && <LocationInfo formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
-                </div>
-                : <Navigate to="/login" />
-        }
+    return (
+        <>
+            {
+                token ?
+                    <div>
+                        {isTogle.BasicInfo && <BasicInfo formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
+                        {isTogle.propertyDetails && <PropertyDetails formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
+                        {isTogle.GeneralInfo && <GeneralInfo formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
+                        {isTogle.LocationInfo && <LocationInfo formData={formData} setFormData={setFormData} isTogle={isTogle} setIsTogle={setIsTogle} />}
+                    </div>
+                    : <Navigate to="/login" />
+            }
 
-    </>
+        </>
+    )
 
 }
 
-export default AddProperty;
+export default AddProperty; 
