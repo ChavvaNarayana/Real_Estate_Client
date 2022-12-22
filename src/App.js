@@ -1,20 +1,26 @@
 import AddProperty from "./components/AddProperty/AddProperty";
-
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
-import IndexPage from './components/IndexPage';
 import Signin from './components/Signin';
 
 function App() {
   return (
     <>
       <BrowserRouter>
+
         <Routes>
-          {/* <Route path='/' element={<IndexPage />} /> */}
-          <Route path='/' element={<AddProperty />} />
+
+          <Route path='/' element={<Signin />} />
+
+          <Route path='/add-property' element={<PrivateRouter><AddProperty /></PrivateRouter>} />
+
+          <Route path='/signup' element={<SignUp />} />
+
+          <Route path='/dashboard' element={<PrivateRouter> <Dashboard /> </PrivateRouter>} />
+
         </Routes>
+
       </BrowserRouter>
-  
+
     </>
   );
 }
