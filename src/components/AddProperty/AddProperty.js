@@ -47,7 +47,7 @@ const AddProperty = () => {
     const [isTogle, setIsTogle] = useState({
         BasicInfo: true,
         propertyDetails: false,
-        GenralInfo: false,
+        GeneralInfo: false,
         LocationInfo: false
     });
     let token = localStorage.getItem('token')
