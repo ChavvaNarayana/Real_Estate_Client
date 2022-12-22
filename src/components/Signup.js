@@ -1,7 +1,8 @@
+
 import React, { useState } from 'react';
 import './src/components/Signup.css';
 import axios from "axios";
-const Signup = async()=> {
+const Signup =(
   const[data,setData] = useState({
     username:'',
     email:'',
