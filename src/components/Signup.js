@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
-
-import React, { useState } from 'react';
-import './Signup.css';
 import './Signup.css';
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const apiUrl = 'http://localhost:5000/register'
 const Signup = () => {
     const navigate = useNavigate()
@@ -38,17 +35,23 @@ const Signup = () => {
         <div className="sign-up-parent" >
             <div className="sign-up-form-container">
                 <center>
-                    <h1 style={ { color: "#4c57b6" } }>Logo</h1>
-                    <p>Create New Account</p>
+                   <br/> <h1 style={ { color: "#4c57b6" } }>Logo</h1>
+                    <p>Create New Account</p><br/>
                     <form onSubmit={ submitHandler }>
-                        <input type="text" name='username' placeholder='username' value={ data.username } onChange={ changeHandler } /> <br />
-                        <input type="email" name='email' placeholder='email id' value={ data.email } onChange={ changeHandler } /><br />
-                        <input type="password" name='password' placeholder='password' value={ data.password } onChange={ changeHandler } /><br />
-                        <input type="Password" name='confirmPassword' placeholder='confirmpassword' value={ data.confirmPassword } onChange={ changeHandler } /><br />
+                        <input type="email" name='email' placeholder='Email id' value={ data.email } onChange={ changeHandler } /><br />
+                        <input type="password" name='password' placeholder='Password' value={ data.password } onChange={ changeHandler } /><br />
+                        <input type="Password" name='confirmPassword' placeholder='Confirmpassword' value={ data.confirmPassword } onChange={ changeHandler } /><br />
                         <button type="submit" className="submit-button">Sign Up</button>
                     </form>
                 </center>
             </div>
+           <div>
+           <p className="para">
+          <Link to="/register" style={{ textDecoration: 'none' }}>
+            Sign In
+          </Link>
+        </p>
+           </div>
         </div >
     )
 }

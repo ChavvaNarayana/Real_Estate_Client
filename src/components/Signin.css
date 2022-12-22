@@ -4,59 +4,66 @@
   box-sizing: border-box;
 }
 
-.sign-up-parent {
+.sign-in-parent {
   display: flex;
   width: 100vw;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: rgb(11, 227, 151);
+  background-color: #E1F9F4;
 }
 
-.sign-up-form-container {
-  width: 30vw;
-  height: 28vw;
+.sign-in-form-container {
+  height: 450px;
+  width: 450px;
   border-radius: 10px;
   background-color: white;
   position: relative;
+  margin-left: 100px;
 }
 
-.sign-up-form-container h1 {
-  margin-top: 1vh;
+.sign-in-form-container h1 {
+  margin-top: 5vh;
   margin-left: 1vw;
 }
 
-.sign-up-form-container p {
-  margin-top: 2vh;
+.sign-in-form-container p {
+  margin-top: 5vh;
   margin-left: 1vw;
 }
 
-.sign-up-form-container input {
+.sign-in-form-container input {
   display: block;
   height: 6vh;
   width: 24vw;
   margin-left: 0vw;
   border-radius: 3px;
   border: 1px solid #e2e2e2;
-  margin-top: 0vh;
+  margin-top: 1vh;
 }
 
-.sign-up-form-container button {
+.sign-in-form-container button {
   display: block;
   height: 6vh;
   width: 24vw;
   margin-left: 0vw;
   border-radius: 3px;
-  margin-top: 0vh;
+  border:0px white;
+  margin-top: 1vh;
   cursor: pointer;
   background-color: #4c57b6;
   color: white;
 }
-
+.eye {
+  position: absolute;
+  left: 25vw;
+  top: 37vh;
+  cursor: pointer;
+}
 .para {
   position: absolute;
   width: 300px;
   height: 22px;
-  left: 575px;
+  margin-left: 0px;
   top: 585px;
 }
