@@ -167,11 +167,8 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                         latitude: "",
                                         longitude: ""
                                     })
-                                }
+                                }}>Cancel</button>
 
-                                }>
-                                    Cancel
-                                </button>
                                 <button className="save"
                                     onClick={(e) => {
                                         e.preventDefault();
@@ -185,12 +182,10 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
                                             })
                                             console.log(formData, isTogle)
-                                            navigate('/')
+                                            navigate('/add')
                                         }
-                                    }}
-                                >
-                                    Save &#38; continue
-                                </button>
+                                    }}>Save &#38; continue</button>
+
                             </div>
 
                         </form>
