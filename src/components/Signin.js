@@ -37,14 +37,14 @@ const Signin=()=> {
         <input type="email" name='email' placeholder='email id' value={email} onChange={changeHandler}/><br/>
         <input type="password" name='password' placeholder='password' value={password} onChange={changeHandler}/><br/>
         <button type="submit" className="submit-button">Sign In</button><br/>
-        <Link href="https://www.google.com">SignUp</Link>
+            <Link href="/register">SignUp</Link>
        </form>
       </center>
       </div>
       <div>
         <p className="para">
           Don't have an account?
-          <Link href="https://www.google.com">
+          <Link href="/register">
             SignUp
           </Link>
         </p>
