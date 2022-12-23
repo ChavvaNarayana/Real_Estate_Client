@@ -4,6 +4,7 @@ import GeneralInfo from "./GeneralInfo"
 import LocationInfo from "./LocationInfo"
 import PropertyDetails from "./PropertyDetails"
 import { Navigate } from "react-router-dom";
+import './AddProperty.css'
 const AddProperty = () => {
 
     const [formData, setFormData] = useState({
@@ -50,8 +51,14 @@ const AddProperty = () => {
         GeneralInfo: false,
         LocationInfo: false
     });
+   
+    let basic = document.getElementsByClassName('BasicInfo')
+    let property = document.getElementsByClassName('PropertyDetail')
+    let location = document.getElementsByClassName('LocationInfo')
+    let general = document.getElementsByClassName('GeneralInfo')
+    // console.log(basic, property, location, general)
     let token = localStorage.getItem('token')
-
+    // if (isTogle.BasicInfo) basic.style.backgroundColor = '#6AB4F8'
     return (
         <>
             {
