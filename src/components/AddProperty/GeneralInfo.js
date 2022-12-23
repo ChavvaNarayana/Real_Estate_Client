@@ -3,6 +3,7 @@ import './GeneralInfo.css'
 import { BsVectorPen } from "react-icons/bs"
 import { useNavigate } from 'react-router-dom';
 import Menubar from '../Dashboard/menubar';
+import Header from '../Header';
 // import PropertyDetails from './PropertyDetails';
 
 
@@ -16,7 +17,7 @@ function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
                     < Menubar />
                 </div>
                 <div className="right">
-
+                    <Header />
                     <h4 className="addANewProperty">
                         Add new Property
                     </h4>
@@ -78,7 +79,7 @@ function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                     type="file" name="PostImage" id="file" className="inputfile" style={{ display: "none" }} />
 
                                 <label className='buttonLabel' style={{ display: 'inline-block' }} htmlFor="file">
-                                    <img src={BsVectorPen} alt="Browse" />
+                                    <img src={BsVectorPen}  />
                                 </label>&nbsp;&nbsp;
                                 <p style={{ display: 'inline-block' }} >{fileName}</p>
 
@@ -87,13 +88,13 @@ function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
                             <div className="rightFormBox">
 
                                 <label htmlFor='Mobile'>Mobile</label>
-                                <input type="number" name="Mobile" id="Mobile" placeholder='Enter Mobile Number'
-                                    onChange={(e) => {setFormData({ ...formData, mobile: e.target.value });}}
-                                    value={formData.mobile}/>
+                                <input type="" name="Mobile" id="Mobile" placeholder='Enter Mobile Number'
+                                    onChange={(e) => { setFormData({ ...formData, mobile: e.target.value }); }}
+                                    value={formData.mobile} />
 
                                 <label htmlFor='Sale Type'>Sale Type</label>
                                 <select name="Sale Type" id='Sale Type'
-                                    onChange={(e) => {setFormData({ ...formData, saleType: e.target.value });}}
+                                    onChange={(e) => { setFormData({ ...formData, saleType: e.target.value }); }}
                                     value={formData.saleType}>
                                     <option value="" disabled selected>Select Sale Type</option>
                                     <option >Direct</option>
@@ -102,7 +103,7 @@ function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
                                 <label htmlFor='PPD Package'>PPD Package</label>
                                 <select name="PPD Package" id='PPD Package'
-                                    onChange={(e) => {setFormData({ ...formData, ppdPackage: e.target.value });}}
+                                    onChange={(e) => { setFormData({ ...formData, ppdPackage: e.target.value }); }}
                                     value={formData.ppdPackage}>
                                     <option value="" disabled selected>Select PPD Package</option>
                                     <option >1</option>
@@ -110,22 +111,24 @@ function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                     <option >3</option>
                                     <option >4</option>
                                 </select>
+                                <label htmlFor='space' style={{ visibility: 'hidden' }}>Space</label>
+                                <input type="text" style={{ visibility: 'hidden' }} />
 
                             </div>
 
                             <div className="buttonBox1">
 
                                 <button className="Previous" onClick={() => {
-                                    setIsTogle({...isTogle, PropertyDetails: true, GeneralInfo: false})
+                                    setIsTogle({ ...isTogle, PropertyDetails: true, GeneralInfo: false })
                                     console.log(formData, isTogle)
-                                    navigate('/')
+                                    navigate('/add')
                                 }}>Previous</button>
 
                                 <button className=" save" onClick={(e) => {
                                     e.preventDefault();
-                                    if (formData.mobile === "") {alert("Mobile is a mandatory field")}
+                                    if (formData.mobile === "") { alert("Mobile is a mandatory field") }
                                     else {
-                                        setIsTogle({...isTogle, LocationInfo: true, GeneralInfo: false})
+                                        setIsTogle({ ...isTogle, LocationInfo: true, GeneralInfo: false })
                                         console.log(formData, isTogle)
                                         navigate('/add')
                                     }

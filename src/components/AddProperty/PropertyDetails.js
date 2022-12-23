@@ -2,6 +2,8 @@ import React from 'react'
 import './propertyDetail.css'
 import Menubar from '../Dashboard/menubar';
 import { useNavigate } from 'react-router-dom';
+import Header from '../Header';
+
 // import BasicInfo from './BasicInfo';
 
 
@@ -17,7 +19,7 @@ function PropertyDetails({ formData, setFormData, isTogle, setIsTogle }) {
                 </div>
 
                 <div className="right">
-
+                    <Header />
                     <h4 className="addANewProperty">
                         Add new Property
                     </h4>
@@ -172,6 +174,8 @@ function PropertyDetails({ formData, setFormData, isTogle, setIsTogle }) {
                                 <input type="text" placeholder='Example: 3 Phase'
                                     onChange={(e) => { setFormData({ ...formData, electricity: e.target.value }); }}
                                     value={formData.electricity} />
+                                <label htmlFor='space' style={{ visibility: 'hidden' }}>Space</label>
+                                <input type="text" style={{ visibility: 'hidden' }} />
 
                             </div>
 
@@ -179,7 +183,7 @@ function PropertyDetails({ formData, setFormData, isTogle, setIsTogle }) {
                                 <button className="Previous" onClick={() => {
                                     setIsTogle({ ...isTogle, BasicInfo: true, propertyDetails: false, })
                                     console.log(formData, isTogle)
-                                    navigate('/')
+                                    navigate('/add')
                                 }}>Previous</button>
 
                                 <button className=" save" onClick={(e) => {
@@ -194,7 +198,7 @@ function PropertyDetails({ formData, setFormData, isTogle, setIsTogle }) {
                                         alert("Click on total area section to get automatically calculated area")
                                     }
                                     else {
-                                        setIsTogle({ ...isTogle, GenralInfo: true, propertyDetails: false, })
+                                        setIsTogle({ ...isTogle, GeneralInfo: true, propertyDetails: false, })
                                         console.log(formData, isTogle)
                                         navigate('/add')
                                     }
