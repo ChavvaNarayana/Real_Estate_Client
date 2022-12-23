@@ -170,6 +170,7 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                         latitude: "",
                                         longitude: ""
                                     })
+                                    navigate('/')
                                 }}>Cancel</button>
 
                                 <button className="save"
