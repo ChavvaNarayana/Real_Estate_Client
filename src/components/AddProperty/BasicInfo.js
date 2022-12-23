@@ -43,19 +43,19 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                     <div className="formBox">
                         <form action="">
                             <div className="leftFormBox">
-                                <label htmlFor="Property-Type">Property Type</label>
+                                <label htmlFor="Property-Type">Property Type *</label>
                                 <select name="Property-Type" id="Property-Type" onChange={(e) => {
                                     setFormData({ ...formData, propertyType: e.target.value });
                                 }}
                                     value={formData.propertyType}
                                 >
                                     <option value="" disabled selected>Select Property Type</option>
-                                    <option >land</option>
+                                    <option >Land</option>
                                     <option >Flat</option>
                                 </select>
                                 <label htmlFor='price'>Price</label>
 
-                                <input type="number" id='price' placeholder='Example: 10000'
+                                <input type="" id='price' placeholder='Example: 10000'
                                     onChange={(e) => {
                                         setFormData({ ...formData, price: e.target.value });
                                     }}

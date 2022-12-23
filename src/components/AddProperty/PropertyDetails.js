@@ -51,15 +51,15 @@ function PropertyDetails({ formData, setFormData, isTogle, setIsTogle }) {
                         <form action="">
                             <div className="leftFormBox">
 
-                                <label htmlFor="Length">Length</label>
-                                <input type="number" placeholder='Example 1000'
+                                <label htmlFor="Length">Length *</label>
+                                <input type="" placeholder='Example 1000'
                                     onChange={(e) => {
                                         setFormData({ ...formData, length: e.target.value });
                                     }}
                                     value={formData.length} />
 
                                 <label htmlFor='Total Area'>Total Area</label>
-                                <input type="number" id='total area' placeholder='Example: 7500'
+                                <input type="" id='total area' placeholder='Example: 7500'
                                     onClick={() => {
                                         setFormData({ ...formData, totalArea: (formData.length * formData.breath) });
                                     }}
@@ -127,8 +127,8 @@ function PropertyDetails({ formData, setFormData, isTogle, setIsTogle }) {
 
                             <div className="rightFormBox">
 
-                                <label htmlFor='Breadth'>Breadth</label>
-                                <input type="number" name="Breadth" id="Breadth" placeholder='Example: 1000'
+                                <label htmlFor='Breadth'>Breadth *</label>
+                                <input type="" name="Breadth" id="Breadth" placeholder='Example: 1000'
                                     onChange={(e) => { setFormData({ ...formData, breath: e.target.value }); }}
                                     value={formData.breath} />
 
@@ -137,8 +137,8 @@ function PropertyDetails({ formData, setFormData, isTogle, setIsTogle }) {
                                     onChange={(e) => { setFormData({ ...formData, areaUnit: e.target.value }); }}
                                     value={formData.areaUnit}>
                                     <option value="" disabled selected>Select Area Unit</option>
-                                    <option >sq ft</option>
-                                    <option >sq cm</option>
+                                    <option >Sq ft</option>
+                                    <option >Sq cm</option>
                                 </select>
 
                                 <label htmlFor='No of Floors'>No of Floors</label>

@@ -79,7 +79,7 @@ function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                     type="file" name="PostImage" id="file" className="inputfile" style={{ display: "none" }} />
 
                                 <label className='buttonLabel' style={{ display: 'inline-block' }} htmlFor="file">
-                                    <img src={BsVectorPen}  />
+                                    <img src={BsVectorPen} />
                                 </label>&nbsp;&nbsp;
                                 <p style={{ display: 'inline-block' }} >{fileName}</p>
 
@@ -88,9 +88,12 @@ function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
                             <div className="rightFormBox">
 
                                 <label htmlFor='Mobile'>Mobile</label>
-                                <input type="" name="Mobile" id="Mobile" placeholder='Enter Mobile Number'
+                                <input type="number" name="country_code" title="Error Message" pattern="[1-9]{1}[0-9]{9}"
                                     onChange={(e) => { setFormData({ ...formData, mobile: e.target.value }); }}
                                     value={formData.mobile} />
+                                {/* <input type="" name="Mobile" id="Mobile" placeholder='Enter Mobile Number'
+                                    onChange={(e) => { setFormData({ ...formData, mobile: e.target.value }); }}
+                                    value={formData.mobile} /> */}
 
                                 <label htmlFor='Sale Type'>Sale Type</label>
                                 <select name="Sale Type" id='Sale Type'
