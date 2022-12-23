@@ -61,7 +61,7 @@ const Signin =  () => {
       <div className="sign-in-form-container">
         <center>
 
-          <h1 style={ { color: "#4c57b6" } }>Logo</h1>
+          <h1 style={ { color: "#4c57b6" } }>Real-Estate</h1>
           <p>Enter Your Credentials to access your account</p><br/>
           <form onSubmit={ submitHandler }>
             <input className='focus' type="email" name='email' placeholder='User Email' value={ data.email } onChange={ changeHandler } /><br />
