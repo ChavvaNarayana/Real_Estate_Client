@@ -13,7 +13,7 @@ function Header({ username, userId }) {
     <header>
       <div className="head flex flex-row space-between mx-5 my-5 items-center">
         <div className="user-id lg-font">
-          <h6>USER ID : { userId}</h6>
+          <h6 className='flex flex-row items-center'><img src='https://img.icons8.com/arcade/512/real-estate.png' width='50em' height="50em" alt='app-icon'/>USER ID : { userId}</h6>
         </div>
         <div className="username-display flex flex-column">
           <div className='flex flex-row space-between'>
