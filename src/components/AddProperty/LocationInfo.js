@@ -1,21 +1,19 @@
 import React from 'react'
-import './LocationInfo.css'
+
 import Menubar from '../Dashboard/menubar';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import Header from '../Header';
 
-// import GeneralInfo from './Genralnfo';
-
-
 function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
     const navigate = useNavigate()
 
     const addProperty = async (e) => {
+        e.preventDefault();
         if (formData.email === '' || formData.area === '') {
             return alert('Email and Area required')
         }
-        e.preventDefault();
+        
         formData.email = localStorage.getItem('email')
         await axios.post('http://localhost:5000/add', formData, {
             headers: {
@@ -80,14 +78,14 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
                     < Menubar />
                 </div>
                 <div className="right">
-                    <Header />
+                    <Header username={ localStorage.getItem('username') } userId={ localStorage.getItem('userId') } />
                     <h4 className="addANewProperty">
                         Add new Property
                     </h4>
 
                     <div className="progress">
 
-                        <div className="BasicInfo1">
+                        <div className="BasicInfo">
                             <p>1</p> &nbsp;&nbsp;
                             <p>Basic Info</p>
                         </div>
@@ -102,7 +100,7 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
                             <p>General Info</p>
                         </div>
 
-                        <div className="LocationInfo1">
+                        <div className="LocationInfo">
                             <p>3</p>&nbsp;&nbsp;
                             <p>Location Info</p>
                         </div>

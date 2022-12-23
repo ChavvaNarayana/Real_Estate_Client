@@ -3,6 +3,7 @@ import './Signin.css';
 import axios from "axios";
 import { BsEyeFill } from 'react-icons/bs';
 import { Link, useNavigate } from 'react-router-dom';
+import logo from "../images/Logo.png";
 const apiUrl = 'http://localhost:5000/login'
 
 
@@ -61,7 +62,7 @@ const Signin =  () => {
       <div className="sign-in-form-container">
         <center>
 
-          <h1 style={ { color: "#4c57b6" } }>Real-Estate</h1>
+          <h1 style={ { color: "#4c57b6" } }>          <img src={ logo } alt="Logo" width='100em' height='100em'/></h1>
           <p>Enter Your Credentials to access your account</p><br/>
           <form onSubmit={ submitHandler }>
             <input className='focus' type="email" name='email' placeholder='User Email' value={ data.email } onChange={ changeHandler } /><br />

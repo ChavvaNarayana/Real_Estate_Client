@@ -142,28 +142,28 @@ function IndexPage() {
   useEffect(() => {
     const getData = async () => {
       await axios({
-        url: apiUrl, 
+        url: apiUrl,
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
           "email": localStorage.getItem('email')
         }
-      }).then((res) => setDat(res.data.properties)).catch(err=> console.log(err))
+      }).then((res) => setDat(res.data.properties)).catch(err => console.log(err))
     }
     getData()
   }, [])
-  console.log(dat)
+
   return (
-    
+
     <>{ token ? <div className="container flex flex-row">
       <div className="side"><Menubar /></div>
       <div className="main flex-1">
-        <Header username={localStorage.getItem('username')} userId = {localStorage.getItem('userId')} />
+        <Header username={ localStorage.getItem('username') } userId={ localStorage.getItem('userId') } />
         <Search setId={ setPPId } ppdId={ ppdId } />
         <Properties data={ data } ppdId={ ppdId } />
       </div>
-    </div> : <Navigate to='/login'/>}
-     
+    </div> : <Navigate to='/login' /> }
+
 
     </>
   )

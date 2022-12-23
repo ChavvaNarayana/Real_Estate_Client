@@ -11,8 +11,8 @@
 }
 
 .sign-up-form-container {
-  padding: 1.5rem 2.5rem;
-
+  padding: 1.5rem 3.5rem;
+  padding-top: 0;
   left: 0px;
   top: 0px;
   border-radius: 10px;
@@ -29,7 +29,7 @@
 
 .sign-up-form-container input {
   display: block;
-  height: 6vh;
+  height: 5vh;
   width: 24vw;
   margin-left: 0vw;
   border-radius: 3px;

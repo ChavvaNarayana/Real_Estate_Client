@@ -3,6 +3,7 @@ import './Signup.css';
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
 import { BsEyeFill } from 'react-icons/bs';
+import logo from "../images/Logo.png";
 const apiUrl = 'http://localhost:5000/register'
 const Signup = () => {
     const navigate = useNavigate()
@@ -49,7 +50,7 @@ const Signup = () => {
         }
         setErr('')
         await axios.post(apiUrl, { data })
-        //.then(res => res.data)
+            //.then(res => res.data)
             .then(data => {
                 localStorage.setItem('userId', data.ppdId)
                 localStorage.setItem('email', data.email)
@@ -68,20 +69,20 @@ const Signup = () => {
         <div className="sign-up-parent" >
             <div className="sign-up-form-container">
                 <center>
-                   <br/> <h1 style={ { color: "#4c57b6" } }>Real-Estate</h1>
-                    <p>Create New Account</p><br/>
+                    <br /> <h1 style={ { color: "#4c57b6",margin: '0' } }><img src={ logo } alt="Logo" width='100em' height='100em' /></h1>
+                    <p>Create New Account</p><br />
                     <form onSubmit={ submitHandler }>
                         <input className='focus' type="text" name='username' placeholder='Name' value={ data.username } onChange={ changeHandler } /><br />
                         <input className='focus' type="email" name='email' placeholder='Email id' value={ data.email } onChange={ changeHandler } /><br />
                         <BsEyeFill id='register-eye' className='register-eye' size={ 20 } color='#DFDFDF' onClick={ handlePass } />
-                        <input className='focus' type="password" name='password' id='register-password' placeholder='Password' value={ data.password } onChange={ changeHandler } minLength={6} /><br />
+                        <input className='focus' type="password" name='password' id='register-password' placeholder='Password' value={ data.password } onChange={ changeHandler } minLength={ 6 } /><br />
                         <input className='focus' type="Password" name='confirmPassword' placeholder='Confirm Password' value={ data.confirmPassword } onChange={ changeHandler } /><br />
                         <button type="submit" className="submit-button scale-onhover">Sign Up</button>
                         <p style={ { color: 'red' } }>{ err }</p>
                     </form>
                 </center>
             </div>
-           <div>
+            <div>
 
             </div>
             <p className="para">
