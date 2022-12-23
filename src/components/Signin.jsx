@@ -62,8 +62,8 @@ const Signin =  () => {
       <div className="sign-in-form-container">
         <center>
 
-          <h1 style={ { color: "#4c57b6" } }>          <img src={ logo } alt="Logo" width='100em' height='100em'/></h1>
-          <p>Enter Your Credentials to access your account</p><br/>
+          <h1 className='index-logo' style={ { margin:0 } } >          <img src={ logo } alt="Logo" width='140em' height='140em'/></h1>
+          <p style={{opacity:0.8}}>Enter Your Credentials to access your account</p><br/>
           <form onSubmit={ submitHandler }>
             <input className='focus' type="email" name='email' placeholder='User Email' value={ data.email } onChange={ changeHandler } /><br />
             <input id='login-password' className='focus' type="password" name='password' placeholder='Password' value={ data.password } onChange={ changeHandler } />
