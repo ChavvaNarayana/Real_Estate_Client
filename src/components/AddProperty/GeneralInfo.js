@@ -4,7 +4,6 @@ import { BsFillCameraFill } from "react-icons/bs"
 import { useNavigate } from 'react-router-dom';
 import Menubar from '../Dashboard/Menubar';
 import Header from '../Header';
-// import PropertyDetails from './PropertyDetails';
 
 
 function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
