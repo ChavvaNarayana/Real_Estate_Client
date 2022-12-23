@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './GeneralInfo.css'
+
 import { BsVectorPen } from "react-icons/bs"
 import { useNavigate } from 'react-router-dom';
 import Menubar from '../Dashboard/menubar';
@@ -17,14 +17,14 @@ function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
                     < Menubar />
                 </div>
                 <div className="right">
-                    <Header />
+                    <Header username={ localStorage.getItem('username') } userId={ localStorage.getItem('userId') } />
                     <h4 className="addANewProperty">
                         Add new Property
                     </h4>
 
                     <div className="progress">
 
-                        <div className="BasicInfo1">
+                        <div className="BasicInfo">
                             <p>1</p> &nbsp;&nbsp;
                             <p>Basic Info</p>
                         </div>
@@ -34,7 +34,7 @@ function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
                             <p>Property  Detail</p>
                         </div>
 
-                        <div className="GeneralInfo1">
+                        <div className="GeneralInfo">
                             <p>3</p>&nbsp;&nbsp;
                             <p>General Info</p>
                         </div>

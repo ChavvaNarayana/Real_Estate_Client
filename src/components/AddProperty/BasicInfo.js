@@ -1,4 +1,4 @@
-import './BasicInfo.css'
+
 import Menubar from '../Dashboard/menubar';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Header';
@@ -12,7 +12,7 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                     <Menubar />
                 </div>
                 <div className="right">
-                    <Header />
+                    <Header username={ localStorage.getItem('username') } userId={ localStorage.getItem('userId') } />
                     <h4 className="addANewProperty">
                         Add new Property
                     </h4>
@@ -52,6 +52,8 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                     <option value="" disabled selected>Select Property Type</option>
                                     <option >Land</option>
                                     <option >Flat</option>
+                                    <option >Apartment</option>
+                                    <option >Bungalow</option>
                                 </select>
                                 <label htmlFor='price'>Price</label>
 

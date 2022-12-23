@@ -1,5 +1,5 @@
 import React from 'react'
-import './propertyDetail.css'
+
 import Menubar from '../Dashboard/menubar';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Header';
@@ -19,18 +19,18 @@ function PropertyDetails({ formData, setFormData, isTogle, setIsTogle }) {
                 </div>
 
                 <div className="right">
-                    <Header />
+                    <Header username={ localStorage.getItem('username') } userId={ localStorage.getItem('userId') } />
                     <h4 className="addANewProperty">
                         Add new Property
                     </h4>
 
                     <div className="progress">-
-                        <div className="BasicInfo1">
+                        <div className="BasicInfo">
                             <p>1</p> &nbsp;&nbsp;
                             <p>Basic Info</p>
                         </div>
 
-                        <div className="PropertyDetail1">
+                        <div className="PropertyDetail">
                             <p>2</p>&nbsp;&nbsp;
                             <p>Property  Detail</p>
                         </div>
