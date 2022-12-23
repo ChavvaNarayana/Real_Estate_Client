@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Signin.css';
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
+import eye from "../images/eye.png";
 const apiUrl = 'http://localhost:5000/login'
 const Signin =  () => {
   const [data, setData] = useState({email: '',password: ''})
@@ -28,17 +29,27 @@ const Signin =  () => {
 
   }
   return (
-    <div className="sign-up-parent">
-      <div className="sign-up-form-container">
+    <div className="sign-in-parent">
+      <div className="sign-in-form-container">
         <center>
 
           <h1 style={ { color: "#4c57b6" } }>Logo</h1>
-          <p>Create New Account</p>
+          <p>Enter Your Credentials to access your account</p><br/>
           <form onSubmit={ submitHandler }>
-            <input type="email" name='email' placeholder='email id' value={ data.email } onChange={ changeHandler } /><br />
-            <input type="password" name='password' placeholder='password' value={ data.password } onChange={ changeHandler } /><br />
-            <button type="submit" className="submit-button">Sign In</button><br />
-            <Link to='/register'>SignUp</Link>
+            <input type="email" name='email' placeholder='User id' value={ data.email } onChange={ changeHandler } /><br />
+            <input type="password" name='password' placeholder='Password' value={ data.password } onChange={ changeHandler } />
+            <span
+            className="eye"
+            onClick={() => {
+              setShowPassword(!showPassword);
+            }}
+          >
+            <img src={eye} alt="no data" />
+            </span>
+            
+            <br />
+            <button type="submit" className="submit-button">Sign In</button><br/>
+            <Link to='/register' style={{ textDecoration: 'none' }}>Sign Up</Link>
 
           </form>
         </center>
@@ -46,7 +57,7 @@ const Signin =  () => {
       <div>
         <p className="para">
           Don't have an account?
-          <Link to="/register">
+          <Link to="/register" style={{ textDecoration: 'none' }}>
             SignUp
           </Link>
         </p>

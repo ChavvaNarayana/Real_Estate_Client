@@ -15,12 +15,12 @@ function Header({ username, userId }) {
         <div className="user-id lg-font">
           <h6>USER ID : { userId}</h6>
         </div>
-        <div className="user-name lg-font flex flex-column">
-          <h6 className='flex flex-row items-center'>
-            <div><AiOutlineUser color='#A6A6A6' size={ 22 } /></div>
-            <div className='username' onClick={() => setLogout(prev => !prev)}>{ username }</div>
-            <div><FiChevronDown color='#A6A6A6' /></div>
-          </h6>
+        <div className="username-display flex flex-column">
+          <div className='flex flex-row space-between'>
+            <div><AiOutlineUser className='user-icons' size={ 30 } /></div>
+            <div className='username' onClick={() => setLogout(prev => !prev)}>User Name : { username }</div>
+            <div><FiChevronDown className='user-icons' /></div>
+          </div>
           { isLogout && <button className='logout-btn' onClick={ logout }>Logout</button> }
         
         </div>

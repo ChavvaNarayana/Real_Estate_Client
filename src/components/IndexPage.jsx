@@ -4,7 +4,7 @@ import Search from './Search'
 import './Index.css'
 import Menubar from './Dashboard/menubar'
 import Properties from './Properties'
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import axios from 'axios'
 function IndexPage() {
   let data = [

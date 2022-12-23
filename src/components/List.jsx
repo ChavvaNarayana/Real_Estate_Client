@@ -20,7 +20,7 @@ function List({ ppdId, property, contact, views, area, status, daysLeft, }) {
         <td style={ { width: '10.5%' } }>{area }</td>
         <td style={ { width: '11%' } }>{views }</td>
         <td className="cursor-pointer sold-un" onClick={handleSold} style={ { width: '12%' } }>{isSold}</td>
-        <td style={ { width: '11%' } }>{ daysLeft }</td>
+        <td style={ { width: '10%' } }>{ daysLeft }</td>
         <td><BsEyeFill className="cursor-pointer eye" size={ 20 } style={ { marginRight: '1rem' } } />
           <MdEdit  className="cursor-pointer edit" size={ 20 } />
         </td>

@@ -1,31 +1,29 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 .sign-up-parent {
+  font-family: 'Source Sans Pro', sans-serif;
   display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: rgb(11, 227, 151);
+  background-color: #E1F9F4;
 }
 
 .sign-up-form-container {
-  width: 30vw;
-  height: 28vw;
+  padding: 1.5rem 2.5rem;
+
+  left: 0px;
+  top: 0px;
   border-radius: 10px;
   background-color: white;
   position: relative;
 }
 .sign-up-form-container h1 {
-  margin-top: 1vh;
   margin-left: 1vw;
 }
 
 .sign-up-form-container p {
-  margin-top: 2vh;
   margin-left: 1vw;
 }
 
@@ -40,13 +38,32 @@
 }
 
 .sign-up-form-container button {
+    font-size: medium;
   display: block;
   height: 6vh;
   width: 24vw;
   margin-left: 0vw;
   border-radius: 3px;
+  border:0px white;
   margin-top: 0vh;
   cursor: pointer;
   background-color: #4c57b6;
   color: white;
+}
+.focus:focus {
+  border: #4c57b6;
+  outline: #4c57b6;
+
+}
+.focus::placeholder {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.scale-onhover:hover {
+  transform: scale(1.05);
+  transition: all 0.5s ease-in-out;
+}
+.register-eye {
+  float: right;
+  margin: 0.2rem;
+    cursor: pointer;
 }
