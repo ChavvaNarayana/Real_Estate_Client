@@ -10,65 +10,63 @@ import Header from '../Header';
 
 function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
     const navigate = useNavigate()
-    const addProperty = (e) => {
-        e.preventDefault();
 
-        const addProperty = (e) => {
-            e.preventDefault();
-            formData.email = localStorage.get('email')
-            axios.post('http://localhost:5000/add', formData, {
-                headers: {
-                    authorization: localStorage.getItem('token')
-                }
-            }).then(function (response) {
-                console.log(response)
-                console.log(response.data);
-                alert(response.data.message);
-                setFormData({
-                    propertyType: "",
-                    negotable: "",
-                    price: '',
-                    ownership: "",
-                    propertyAge: "",
-                    propertyApproved: "",
-                    propertyDescription: "",
-                    bankLoan: "",
-                    length: '',
-                    breath: '',
-                    totalArea: '',
-                    areaUnit: "",
-                    noOfBHK: '',
-                    noOfFloor: '',
-                    attached: "",
-                    western: "",
-                    furnished: "",
-                    carParking: "",
-                    lift: "",
-                    electricity: "",
-                    facing: "",
-                    name: "",
-                    mobile: '',
-                    postedBy: "",
-                    saleType: "",
-                    featuredPackage: "",
-                    ppdPackage: "",
-                    email: "",
-                    city: "",
-                    area: "",
-                    pincode: '',
-                    address: "",
-                    landmark: "",
-                    latitude: "",
-                    longitude: ""
-                })
-                if (response.data.message === "success") {
-                    navigate('/')
-                }
-            }).catch(function (error) {
-                alert(error)
-            });
+    const addProperty = async (e) => {
+        if (formData.email === '' || formData.area === '') {
+            return alert('Email and Area required')
         }
+        e.preventDefault();
+        formData.email = localStorage.getItem('email')
+        await axios.post('http://localhost:5000/add', formData, {
+            headers: {
+                authorization: localStorage.getItem('token')
+            }
+        }).then(function (response) {
+
+            setFormData({
+                propertyType: "",
+                negotable: "",
+                price: '',
+                ownership: "",
+                propertyAge: "",
+                propertyApproved: "",
+                propertyDescription: "",
+                bankLoan: "",
+                length: '',
+                breath: '',
+                totalArea: '',
+                areaUnit: "",
+                noOfBHK: '',
+                noOfFloor: '',
+                attached: "",
+                western: "",
+                furnished: "",
+                carParking: "",
+                lift: "",
+                electricity: "",
+                facing: "",
+                name: "",
+                mobile: '',
+                postedBy: "",
+                saleType: "",
+                featuredPackage: "",
+                ppdPackage: "",
+                email: "",
+                city: "",
+                area: "",
+                pincode: '',
+                address: "",
+                landmark: "",
+                latitude: "",
+                longitude: ""
+            })
+                navigate('/')
+            
+        }).catch(function (error) {
+            alert(error)
+        });
     }
+
 
     const token = localStorage.getItem("token");
     if (token === undefined) {
@@ -118,23 +116,23 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
                                 <label htmlFor="Email">Email</label>
                                 <input type="text" id='Email' placeholder='Email'
-                                    onChange={(e) => { setFormData({ ...formData, email: e.target.value }); }}
-                                    value={formData.email} />
+                                    onChange={ (e) => { setFormData({ ...formData, email: e.target.value }); } }
+                                    value={ formData.email } />
 
                                 <label htmlFor='Area'>Area</label>
                                 <input type="Area" id='Area' placeholder='Area'
-                                    onChange={(e) => { setFormData({ ...formData, area: e.target.value }); }}
-                                    value={formData.area} />
+                                    onChange={ (e) => { setFormData({ ...formData, area: e.target.value }); } }
+                                    value={ formData.area } />
 
                                 <label htmlFor='Address'>Address</label>
                                 <input type="text" placeholder='Address'
-                                    onChange={(e) => { setFormData({ ...formData, address: e.target.value }); }}
-                                    value={formData.address} />
+                                    onChange={ (e) => { setFormData({ ...formData, address: e.target.value }); } }
+                                    value={ formData.address } />
 
                                 <label htmlFor='Latitude'>Latitude</label>
                                 <input type="text" id='Latitude' placeholder='Latitude'
-                                    onChange={(e) => { setFormData({ ...formData, latitude: e.target.value }); }}
-                                    value={formData.latitude} />
+                                    onChange={ (e) => { setFormData({ ...formData, latitude: e.target.value }); } }
+                                    value={ formData.latitude } />
 
                             </div>
 
@@ -142,38 +140,38 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
                                 <label htmlFor='City'>City</label>
                                 <input type="text" placeholder='City'
-                                    onChange={(e) => { setFormData({ ...formData, city: e.target.value }); }}
-                                    value={formData.city} />
+                                    onChange={ (e) => { setFormData({ ...formData, city: e.target.value }); } }
+                                    value={ formData.city } />
 
                                 <label htmlFor='Pincode'>Pincode</label>
                                 <input type="" placeholder='Pincode'
-                                    onChange={(e) => { setFormData({ ...formData, pincode: e.target.value }); }}
-                                    value={formData.pincode} />
+                                    onChange={ (e) => { setFormData({ ...formData, pincode: e.target.value }); } }
+                                    value={ formData.pincode } />
 
                                 <label htmlFor='Landmark'>Landmark</label>
                                 <input type="text" placeholder='Landmark'
-                                    onChange={(e) => { setFormData({ ...formData, landmark: e.target.value }); }}
-                                    value={formData.landmark} />
+                                    onChange={ (e) => { setFormData({ ...formData, landmark: e.target.value }); } }
+                                    value={ formData.landmark } />
 
                                 <label htmlFor='Longitude'>Longitude</label>
                                 <input type="text" placeholder='Longitude'
-                                    onChange={(e) => { setFormData({ ...formData, longitude: e.target.value }); }}
-                                    value={formData.longitude} />
+                                    onChange={ (e) => { setFormData({ ...formData, longitude: e.target.value }); } }
+                                    value={ formData.longitude } />
 
                             </div>
 
                             <div className="buttonBox">
 
-                                <button className="Previous" onClick={(e) => {
+                                <button className="Previous" onClick={ (e) => {
                                     e.preventDefault();
                                     {
-                                        setIsTogle({ ...isTogle, GenralInfo: true, LocationInfo: false, })
+                                        setIsTogle({ ...isTogle, GeneralInfo: true, LocationInfo: false, })
                                         console.log(formData, isTogle)
-                                        navigate('/add')
-                                    }
-                                }}>Previous</button>
 
-                                <button className="Add Property" onClick={addProperty} > Add Property </button>
+                                    }
+                                } }>Previous</button>
+
+                                <button className="Add Property" onClick={ addProperty } > Add Property </button>
 
                             </div>
 

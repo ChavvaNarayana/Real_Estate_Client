@@ -183,7 +183,7 @@ function PropertyDetails({ formData, setFormData, isTogle, setIsTogle }) {
                                 <button className="Previous" onClick={() => {
                                     setIsTogle({ ...isTogle, BasicInfo: true, propertyDetails: false, })
                                     console.log(formData, isTogle)
-                                    navigate('/add')
+                                 
                                 }}>Previous</button>
 
                                 <button className=" save" onClick={(e) => {
