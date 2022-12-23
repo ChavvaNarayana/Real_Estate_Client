@@ -79,12 +79,14 @@ header {
     font-size: small;
     opacity: 0.8;
     margin-bottom: 0;
+        font-family: 'Source Sans Pro', sans-serif;
 }
 
 #search::placeholder {
     font-size: larger;
     color: #B4B4C6;
     opacity: 0.9;
+        font-family: 'Source Sans Pro', sans-serif;
 }
 
 .search-input {

@@ -64,7 +64,7 @@ const Signin =  () => {
           <h1 style={ { color: "#4c57b6" } }>Logo</h1>
           <p>Enter Your Credentials to access your account</p><br/>
           <form onSubmit={ submitHandler }>
-            <input className='focus' type="email" name='email' placeholder='User id' value={ data.email } onChange={ changeHandler } /><br />
+            <input className='focus' type="email" name='email' placeholder='User Email' value={ data.email } onChange={ changeHandler } /><br />
             <input id='login-password' className='focus' type="password" name='password' placeholder='Password' value={ data.password } onChange={ changeHandler } />
             <span className="login-eye" onClick={ handlePass}>
               <BsEyeFill id='login-eye' size={20} color='#DFDFDF'/>
