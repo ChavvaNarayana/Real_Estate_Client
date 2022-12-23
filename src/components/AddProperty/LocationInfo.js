@@ -3,6 +3,8 @@ import './LocationInfo.css'
 import Menubar from '../Dashboard/menubar';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
+import Header from '../Header';
+
 // import GeneralInfo from './Genralnfo';
 
 
@@ -80,6 +82,7 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
                     < Menubar />
                 </div>
                 <div className="right">
+                    <Header />
                     <h4 className="addANewProperty">
                         Add new Property
                     </h4>
@@ -143,7 +146,7 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                     value={formData.city} />
 
                                 <label htmlFor='Pincode'>Pincode</label>
-                                <input type="number" placeholder='Pincode'
+                                <input type="" placeholder='Pincode'
                                     onChange={(e) => { setFormData({ ...formData, pincode: e.target.value }); }}
                                     value={formData.pincode} />
 

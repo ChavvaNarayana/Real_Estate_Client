@@ -1,7 +1,7 @@
 import './BasicInfo.css'
 import Menubar from '../Dashboard/menubar';
 import { useNavigate } from 'react-router-dom';
-import Action from '../Dashboard/action';
+import Header from '../Header';
 
 function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
     const navigate = useNavigate()
@@ -12,7 +12,7 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                     <Menubar />
                 </div>
                 <div className="right">
-                    <Action />
+                    <Header />
                     <h4 className="addANewProperty">
                         Add new Property
                     </h4>
@@ -182,7 +182,6 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                         else {
                                             setIsTogle({
                                                 ...isTogle, propertyDetails: true, BasicInfo: false
-
                                             })
                                             console.log(formData, isTogle)
                                             navigate('/add')
