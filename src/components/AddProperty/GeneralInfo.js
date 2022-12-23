@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-import { BsVectorPen } from "react-icons/bs"
+import { BsFillCameraFill } from "react-icons/bs"
 import { useNavigate } from 'react-router-dom';
-import Menubar from '../Dashboard/menubar';
+import Menubar from '../Dashboard/Menubar';
 import Header from '../Header';
 // import PropertyDetails from './PropertyDetails';
 
@@ -10,6 +10,7 @@ import Header from '../Header';
 function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
     const navigate = useNavigate()
     const [fileName, setFileName] = useState("Add Photo");
+
     return (
         <>
             <div className="container">
@@ -24,26 +25,65 @@ function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
                     <div className="progress">
 
-                        <div className="BasicInfo">
+                        <div className="BasicInfo" onClick={ () => {
+                            setIsTogle(prev => {
+                                console.log('basic')
+                                return {
+                                    BasicInfo: true,
+                                    propertyDetails: false,
+                                    GeneralInfo: false,
+                                    LocationInfo: false
+                                }
+                            })
+                        } } style={ { backgroundColor: isTogle.BasicInfo ? '#6AB4F8' : "white", color: isTogle.BasicInfo ? 'white' : "#AAAAAA" } }>
                             <p>1</p> &nbsp;&nbsp;
                             <p>Basic Info</p>
                         </div>
 
-                        <div className="PropertyDetail">
+                        <div className="PropertyDetail" onClick={ () => {
+                            setIsTogle(prev => {
+                                console.log('property')
+                                return {
+                                    BasicInfo: false,
+                                    propertyDetails: true,
+                                    GeneralInfo: false,
+                                    LocationInfo: false
+                                }
+                            })
+                        } } style={ { backgroundColor: isTogle.propertyDetails ? '#6AB4F8' : "white", color: isTogle.propertyDetails ? "white" : "#AAAAAA" } }>
                             <p>2</p>&nbsp;&nbsp;
                             <p>Property  Detail</p>
                         </div>
 
-                        <div className="GeneralInfo">
+                        <div className="GeneralInfo" onClick={ () => {
+                            console.log('general')
+                            setIsTogle(prev => {
+                                return {
+                                    BasicInfo: false,
+                                    propertyDetails: false,
+                                    GeneralInfo: true,
+                                    LocationInfo: false
+                                }
+                            })
+                        } } style={ { backgroundColor: isTogle.GeneralInfo ? '#6AB4F8' : "white", color: isTogle.GeneralInfo ? "white" : "#AAAAAA" } }>
                             <p>3</p>&nbsp;&nbsp;
                             <p>General Info</p>
                         </div>
 
-                        <div className="LocationInfo">
+                        <div className="LocationInfo" onClick={ () => {
+                            console.log('location')
+                            setIsTogle(prev => {
+                                return {
+                                    BasicInfo: false,
+                                    propertyDetails: false,
+                                    GeneralInfo: false,
+                                    LocationInfo: true
+                                }
+                            })
+                        } } style={ { backgroundColor: isTogle.LocationInfo ? '#6AB4F8' : "white", color: isTogle.LocationInfo ? "white" : "#AAAAAA" } }>
                             <p>3</p>&nbsp;&nbsp;
                             <p>Location Info</p>
                         </div>
-
                     </div>
 
                     <div className="formBox">
@@ -74,12 +114,12 @@ function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
                                 <input onChange={(e) => {
                                     setFileName(e.target.value.split("\\").pop())
-                                    // setFile(e.target.files[0])
+                                    
                                 }}
                                     type="file" name="PostImage" id="file" className="inputfile" style={{ display: "none" }} />
 
-                                <label className='buttonLabel' style={{ display: 'inline-block' }} htmlFor="file">
-                                    <img src={BsVectorPen} />
+                                <label id='image' className='buttonLabel'  htmlFor="file">
+                                    <BsFillCameraFill color='white' size={30}/>
                                 </label>&nbsp;&nbsp;
                                 <p style={{ display: 'inline-block' }} >{fileName}</p>
 
@@ -87,14 +127,11 @@ function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
                             <div className="rightFormBox">
 
-                                <label htmlFor='Mobile'>Mobile</label>
-                                <input type="number" name="country_code" title="Error Message" pattern="[1-9]{1}[0-9]{9}"
+                                <label htmlFor='Mobile'>Mobile*</label>
+                                <input placeholder='Your 10 digit Phone Number' type="number" name="country_code" title="Error Message" pattern="[1-9]{1}[0-9]{9}"
                                     onChange={(e) => { setFormData({ ...formData, mobile: e.target.value }); }}
-                                    value={formData.mobile} />
-                                {/* <input type="" name="Mobile" id="Mobile" placeholder='Enter Mobile Number'
-                                    onChange={(e) => { setFormData({ ...formData, mobile: e.target.value }); }}
-                                    value={formData.mobile} /> */}
-
+                                    value={formData.mobile} required minLength={10} />
+                              
                                 <label htmlFor='Sale Type'>Sale Type</label>
                                 <select name="Sale Type" id='Sale Type'
                                     onChange={(e) => { setFormData({ ...formData, saleType: e.target.value }); }}
@@ -114,12 +151,17 @@ function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                     <option >3</option>
                                     <option >4</option>
                                 </select>
+                   
+
+                                <label htmlFor='space' style={{ visibility: 'hidden' }}>Space</label>
+                                <input type="text" style={{ visibility: 'hidden' }} />
+
                                 <label htmlFor='space' style={{ visibility: 'hidden' }}>Space</label>
                                 <input type="text" style={{ visibility: 'hidden' }} />
 
                             </div>
 
-                            <div className="buttonBox1">
+                            <div className="buttonBox">
 
                                 <button className="Previous" onClick={() => {
                                     setIsTogle({ ...isTogle, propertyDetails: true, GeneralInfo: false })
