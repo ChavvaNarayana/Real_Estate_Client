@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Menubar from '../Dashboard/menubar';
+import Menubar from '../Dashboard/Menubar';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Header';
 
@@ -24,23 +24,64 @@ function PropertyDetails({ formData, setFormData, isTogle, setIsTogle }) {
                         Add new Property
                     </h4>
 
-                    <div className="progress">-
-                        <div className="BasicInfo">
+                    <div className="progress">
+
+                        <div className="BasicInfo" onClick={ () => {
+                            setIsTogle(prev => {
+                                console.log('basic')
+                                return {
+                                    BasicInfo: true,
+                                    propertyDetails: false,
+                                    GeneralInfo: false,
+                                    LocationInfo: false
+                                }
+                            })
+                        } } style={ { backgroundColor: isTogle.BasicInfo ? '#6AB4F8' : "white", color: isTogle.BasicInfo ? 'white' : "#AAAAAA" } }>
                             <p>1</p> &nbsp;&nbsp;
                             <p>Basic Info</p>
                         </div>
 
-                        <div className="PropertyDetail">
+                        <div className="PropertyDetail" onClick={ () => {
+                            setIsTogle(prev => {
+                                console.log('property')
+                                return {
+                                    BasicInfo: false,
+                                    propertyDetails: true,
+                                    GeneralInfo: false,
+                                    LocationInfo: false
+                                }
+                            })
+                        } } style={ { backgroundColor: isTogle.propertyDetails ? '#6AB4F8' : "white", color: isTogle.propertyDetails ? "white" : "#AAAAAA" } }>
                             <p>2</p>&nbsp;&nbsp;
                             <p>Property  Detail</p>
                         </div>
 
-                        <div className="GeneralInfo">
+                        <div className="GeneralInfo" onClick={ () => {
+                            console.log('general')
+                            setIsTogle(prev => {
+                                return {
+                                    BasicInfo: false,
+                                    propertyDetails: false,
+                                    GeneralInfo: true,
+                                    LocationInfo: false
+                                }
+                            })
+                        } } style={ { backgroundColor: isTogle.GeneralInfo ? '#6AB4F8' : "white", color: isTogle.GeneralInfo ? "white" : "#AAAAAA" } }>
                             <p>3</p>&nbsp;&nbsp;
                             <p>General Info</p>
                         </div>
 
-                        <div className="LocationInfo">
+                        <div className="LocationInfo" onClick={ () => {
+                            console.log('location')
+                            setIsTogle(prev => {
+                                return {
+                                    BasicInfo: false,
+                                    propertyDetails: false,
+                                    GeneralInfo: false,
+                                    LocationInfo: true
+                                }
+                            })
+                        } } style={ { backgroundColor: isTogle.LocationInfo ? '#6AB4F8' : "white", color: isTogle.LocationInfo ? "white" : "#AAAAAA" } }>
                             <p>3</p>&nbsp;&nbsp;
                             <p>Location Info</p>
                         </div>
@@ -58,8 +99,8 @@ function PropertyDetails({ formData, setFormData, isTogle, setIsTogle }) {
                                     }}
                                     value={formData.length} />
 
-                                <label htmlFor='Total Area'>Total Area</label>
-                                <input type="" id='total area' placeholder='Example: 7500'
+                                <label htmlFor='Total Area'>Total area</label>
+                                <input type="" id='total area' placeholder='Calculated by length and breadth'
                                     onClick={() => {
                                         setFormData({ ...formData, totalArea: (formData.length * formData.breath) });
                                     }}
@@ -115,13 +156,14 @@ function PropertyDetails({ formData, setFormData, isTogle, setIsTogle }) {
                                     value={formData.facing}>
                                     <option value="" disabled selected>Select Facing</option>
                                     <option >North</option>
-                                    <option >North-East</option>
-                                    <option >North-West</option>
-                                    <option >South</option>
-                                    <option >South-East</option>
-                                    <option >South-West</option>
                                     <option >East</option>
                                     <option >West</option>
+                                    <option >South</option>
+                                    <option >North-East</option>
+                                    <option >North-West</option>
+                                    <option >South-East</option>
+                                    <option >South-West</option>
+                             
                                 </select>
                             </div>
 
@@ -137,15 +179,18 @@ function PropertyDetails({ formData, setFormData, isTogle, setIsTogle }) {
                                     onChange={(e) => { setFormData({ ...formData, areaUnit: e.target.value }); }}
                                     value={formData.areaUnit}>
                                     <option value="" disabled selected>Select Area Unit</option>
-                                    <option >Sq ft</option>
-                                    <option >Sq cm</option>
+                                    <option >Sq Feet</option>
+                                    <option >Sq metre</option>
+                                    <option >Yards</option>
+                                    <option >Cents</option>
+                                    <option >Acres</option>
                                 </select>
 
                                 <label htmlFor='No of Floors'>No of Floors</label>
                                 <select name="No of Floors" id='No of Floors'
                                     onClick={(e) => { setFormData({ ...formData, noOfFloor: e.target.value }); }}
                                     value={formData.noOfFloor}>
-                                    <option value="" disabled selected>Select No of Floors</option>
+                                    <option value="" disabled defaultChecked>Select No of Floors</option>
                                     <option >1</option>
                                     <option >2</option>
                                     <option >3</option>
@@ -179,7 +224,7 @@ function PropertyDetails({ formData, setFormData, isTogle, setIsTogle }) {
 
                             </div>
 
-                            <div className="buttonBox1">
+                            <div className="buttonBox">
                                 <button className="Previous" onClick={() => {
                                     setIsTogle({ ...isTogle, BasicInfo: true, propertyDetails: false, })
                                     console.log(formData, isTogle)

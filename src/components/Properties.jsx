@@ -29,7 +29,7 @@ function Properties({ data, ppdId}) {
                           area={ property.area }
                           views={ property.views }
                           status={ property.status }
-                          daysLeft={ property.daysleft }
+                          daysLeft={ property.daysLeft }
 
                       />
                   ))}
