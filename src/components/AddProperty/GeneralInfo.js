@@ -119,9 +119,9 @@ function GeneralInfo({ formData, setFormData, isTogle, setIsTogle }) {
                             <div className="buttonBox1">
 
                                 <button className="Previous" onClick={() => {
-                                    setIsTogle({ ...isTogle, PropertyDetails: true, GeneralInfo: false })
+                                    setIsTogle({ ...isTogle, propertyDetails: true, GeneralInfo: false })
                                     console.log(formData, isTogle)
-                                    navigate('/add')
+                                    
                                 }}>Previous</button>
 
                                 <button className=" save" onClick={(e) => {
