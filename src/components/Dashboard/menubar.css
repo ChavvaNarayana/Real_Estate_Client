@@ -3,11 +3,13 @@
     width: 317px;
     height: 100vh;
     margin: 0;
+
 }
 
-.propert {
-    color: #2289ff;
+.font {
+    color: #AAAAAA;
 }
+
 
 .home {
     color: #2289ff;
@@ -28,6 +30,8 @@
 
 .property {
     color: #2289ff;
+        font-size: 1.08em;
+        letter-spacing: 0.8px;
     
 }
 
@@ -37,9 +41,15 @@
 }
 
 .navvalue {
-    color: black;
+    color: #AAAAAA;
+    letter-spacing: 0.8px;
+    font-size: 1.1em;
 }
 
+.sideoption:hover {
+    color: #2289ff;
+    cursor: pointer;
+}
 
 .sideoption {
     display: flex;
