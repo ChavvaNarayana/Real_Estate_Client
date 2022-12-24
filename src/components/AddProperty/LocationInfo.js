@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Menubar from '../Dashboard/menubar';
+import Menubar from '../Dashboard/Menubar';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import Header from '../Header';
@@ -10,10 +10,10 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
     const addProperty = async (e) => {
         e.preventDefault();
-        if (formData.email === '' || formData.area === '') {
-            return alert('Email and Area required')
+        if (formData.area === '') {
+            return alert('Area is required')
         }
-        
+
         formData.email = localStorage.getItem('email')
         await axios.post('http://localhost:5000/add', formData, {
             headers: {
@@ -58,8 +58,8 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
                 latitude: "",
                 longitude: ""
             })
-                navigate('/')
-            
+            navigate('/')
+
         }).catch(function (error) {
             alert(error)
         });
@@ -85,22 +85,62 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
                     <div className="progress">
 
-                        <div className="BasicInfo">
+                        <div className="BasicInfo" onClick={ () => {
+                            setIsTogle(prev => {
+                                console.log('basic')
+                                return {
+                                    BasicInfo: true,
+                                    propertyDetails: false,
+                                    GeneralInfo: false,
+                                    LocationInfo: false
+                                }
+                            })
+                        } } style={ { backgroundColor: isTogle.BasicInfo ? '#6AB4F8' : "white", color: isTogle.BasicInfo ? 'white' : "#AAAAAA" } }>
                             <p>1</p> &nbsp;&nbsp;
                             <p>Basic Info</p>
                         </div>
 
-                        <div className="PropertyDetail">
+                        <div className="PropertyDetail" onClick={ () => {
+                            setIsTogle(prev => {
+                                console.log('property')
+                                return {
+                                    BasicInfo: false,
+                                    propertyDetails: true,
+                                    GeneralInfo: false,
+                                    LocationInfo: false
+                                }
+                            })
+                        } } style={ { backgroundColor: isTogle.propertyDetails ? '#6AB4F8' : "white", color: isTogle.propertyDetails ? "white" : "#AAAAAA" } }>
                             <p>2</p>&nbsp;&nbsp;
                             <p>Property  Detail</p>
                         </div>
 
-                        <div className="GeneralInfo">
+                        <div className="GeneralInfo" onClick={ () => {
+                            console.log('general')
+                            setIsTogle(prev => {
+                                return {
+                                    BasicInfo: false,
+                                    propertyDetails: false,
+                                    GeneralInfo: true,
+                                    LocationInfo: false
+                                }
+                            })
+                        } } style={ { backgroundColor: isTogle.GeneralInfo ? '#6AB4F8' : "white", color: isTogle.GeneralInfo ? "white" : "#AAAAAA" } }>
                             <p>3</p>&nbsp;&nbsp;
                             <p>General Info</p>
                         </div>
 
-                        <div className="LocationInfo">
+                        <div className="LocationInfo" onClick={ () => {
+                            console.log('location')
+                            setIsTogle(prev => {
+                                return {
+                                    BasicInfo: false,
+                                    propertyDetails: false,
+                                    GeneralInfo: false,
+                                    LocationInfo: true
+                                }
+                            })
+                        } } style={ { backgroundColor: isTogle.LocationInfo ? '#6AB4F8' : "white", color: isTogle.LocationInfo ? "white" : "#AAAAAA" } }>
                             <p>3</p>&nbsp;&nbsp;
                             <p>Location Info</p>
                         </div>
@@ -162,11 +202,11 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
                                 <button className="Previous" onClick={ (e) => {
                                     e.preventDefault();
-                                    {
-                                        setIsTogle({ ...isTogle, GeneralInfo: true, LocationInfo: false, })
-                                        console.log(formData, isTogle)
 
-                                    }
+                                    setIsTogle({ ...isTogle, GeneralInfo: true, LocationInfo: false, })
+
+
+
                                 } }>Previous</button>
 
                                 <button className="Add Property" onClick={ addProperty } > Add Property </button>

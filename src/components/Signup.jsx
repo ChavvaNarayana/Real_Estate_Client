@@ -50,7 +50,7 @@ const Signup = () => {
         }
         setErr('')
         await axios.post(apiUrl, { data })
-            //.then(res => res.data)
+            .then(res => res.data)
             .then(data => {
                 localStorage.setItem('userId', data.ppdId)
                 localStorage.setItem('email', data.email)
@@ -69,8 +69,8 @@ const Signup = () => {
         <div className="sign-up-parent" >
             <div className="sign-up-form-container">
                 <center>
-                    <br /> <h1 style={ { color: "#4c57b6",margin: '0' } }><img src={ logo } alt="Logo" width='100em' height='100em' /></h1>
-                    <p>Create New Account</p><br />
+                    <br /> <h1 className='index-logo' style={ { margin: 0 } } >          <img src={ logo } alt="Logo" width='140em' height='140em' /></h1>
+                    <p style={ { opacity: 0.8 } }>Create New Account</p><br />
                     <form onSubmit={ submitHandler }>
                         <input className='focus' type="text" name='username' placeholder='Name' value={ data.username } onChange={ changeHandler } /><br />
                         <input className='focus' type="email" name='email' placeholder='Email id' value={ data.email } onChange={ changeHandler } /><br />

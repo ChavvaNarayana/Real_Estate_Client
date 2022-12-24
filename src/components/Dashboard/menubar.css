@@ -6,14 +6,9 @@
 
 }
 
-.font {
-    color: #AAAAAA;
-}
-
 
 .home {
     color: #2289ff;
-    margin-right: 30px;
 }
 
 .sideoption .property {
@@ -30,25 +25,33 @@
 
 .property {
     color: #2289ff;
-        font-size: 1.08em;
-        letter-spacing: 0.8px;
-    
+    font-size: 1.08em;
+    letter-spacing: 0.5px;
+    margin-left: 1rem;
 }
 
-.navvalue {
-    margin-left: 28px;
-
-}
 
 .navvalue {
     color: #AAAAAA;
     letter-spacing: 0.8px;
     font-size: 1.1em;
+    margin-left: 1rem;
 }
 
+.navvalue:hover {
+    color: #2289ff;
+}
 .sideoption:hover {
     color: #2289ff;
     cursor: pointer;
+}
+
+.down {
+    color: #AAAAAA;
+}
+
+.down:hover {
+    color: #2289ff;
 }
 
 .sideoption {
@@ -57,7 +60,13 @@
     margin-top: 30px;
     margin-left: 25px;
 }
+
 .logo-option {
     padding-top: 2.5rem;
     padding-left: 5rem;
+}
+.index-logo:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition:all 0.5s ease-in
 }

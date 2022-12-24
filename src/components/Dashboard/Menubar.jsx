@@ -1,19 +1,19 @@
 import React from "react";
 import { RiHome3Line } from "react-icons/ri";
-import { IoIosNotifications } from "react-icons/io";
 
+import { FiDownloadCloud, FiUploadCloud, FiEye } from "react-icons/fi"
 import { BsFillTagFill } from "react-icons/bs";
+import { HiOutlineBell } from 'react-icons/hi'
 
-import { GrFormView, GrUpload, GrDownload } from "react-icons/gr";
-import "./menubar.css";
+import "./Menubar.css";
 import logo from "../../images/Logo.png";
 
 const Menubar = () => {
   return (
     <>
       <div className="sidebarconatiner">
-        <div className="logo-option">
-          <img src={logo} alt="Logo" style={{ width: "70px" }} />
+        <div className="logo-option index-logo">
+          <img src={logo} alt="Logo" style={{ width: "100px",height:"80px" }} />
         </div>
 
         <div className="sidesubcontainer">
@@ -21,42 +21,42 @@ const Menubar = () => {
             <div className="home">
               <RiHome3Line size={20} />
             </div>
-            <div className="property font">Property</div>
+            <div className="property ">Property</div>
           </div>
 
           <div className="sideoption">
             <div className="other-icons">
-              <IoIosNotifications  size={ 20 } />
+              <HiOutlineBell className="down" size={ 20 } />
             </div>
-            <div className="navvalue font">Assistant</div>
+            <div className="navvalue ">Assistant</div>
           </div>
 
           <div className="sideoption">
             <div className="other-icons">
-              <GrDownload  size={ 20 } />
+              <FiDownloadCloud  className="down"  size={ 20 } />
             </div>
-            <div className="navvalue font">Received Interest</div>
+            <div className="navvalue ">Received Interest</div>
           </div>
 
           <div className="sideoption ">
             <div className="other-icons">
-              <GrUpload size={ 20 } />
+              <FiUploadCloud className="down" size={ 20 } />
             </div>
-            <div className="navvalue font">Sent Interest</div>
+            <div className="navvalue ">Sent Interest</div>
           </div>
 
           <div className="sideoption">
             <div className="other-icons">
-              <GrFormView size={ 20 } />
+              <FiEye className="down" size={ 20 } />
             </div>
-            <div className="navvalue font">Property View</div>
+            <div className="navvalue ">Property View</div>
           </div>
 
           <div className="sideoption">
             <div className="other-icons">
-              <BsFillTagFill size={ 20 } />
+              <BsFillTagFill className="down" size={ 20 } />
             </div>
-            <div className="navvalue font">Traffic Plan</div>
+            <div className="navvalue">Traffic Plan</div>
           </div>
         </div>
       </div>
