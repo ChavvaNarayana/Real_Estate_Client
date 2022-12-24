@@ -3,15 +3,17 @@ import './Signin.css';
 import axios from "axios";
 import { BsEyeFill } from 'react-icons/bs';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from "../images/Logo.png";
-const apiUrl = 'http://localhost:5000/login'
+import logo from "../../images/Logo.png";
+import Loading from '../Loading';
+const apiUrl = 'https://real-estate-by-rohit-team14.onrender.com/login'
 
 
 const Signin =  () => {
   const [data, setData] = useState({ email: '', password: '' });
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-  const [err, setErr]  = useState('');
+  const [err, setErr] = useState('');
+  const [isLoading, setLoading] = useState(false)
   const changeHandler = e => {
     const {name, value} = e.target
     setData(data => { 
@@ -41,6 +43,7 @@ const Signin =  () => {
       return
     }
     setErr('')
+    setLoading(true)
     await axios.post(apiUrl, { data }).then(res => res.data)
       .then(data => {
         localStorage.setItem('userId', data.ppdId)
@@ -54,6 +57,7 @@ const Signin =  () => {
         else setErr('User isn"t registerd. Try Sign up')
         console.log(err);
       })
+    .finally(() => setLoading(false))
     
 
   }
@@ -72,8 +76,10 @@ const Signin =  () => {
             </span>
             
             <br />
+           {isLoading && <Loading />}
             <button type="submit" className="submit-button scale-onhover">Sign In</button><br />
-            <p style={ { color: 'red' } }>{ err }</p>
+            <p style={ { color: 'red' } }>{ err } </p>
+            
             <Link to='/register' style={{ textDecoration: 'none' }}>Sign Up</Link>
 
           </form>
