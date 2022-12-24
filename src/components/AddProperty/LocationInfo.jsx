@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Menubar from '../Dashboard/Menubar';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import Header from '../Header';
+import Loading from '../Loading';
 
 function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
     const navigate = useNavigate()
-
+    const [isLoading, setLoading] = useState(false);
     const addProperty = async (e) => {
         e.preventDefault();
-        if (formData.area === '') {
-            return alert('Area is required')
+        if (formData.area === '' || formData.propertyType === "" || formData.mobile === "") {
+            return alert('Area, Property Type and mobile is required is required')
         }
 
         formData.email = localStorage.getItem('email')
-        await axios.post('http://localhost:5000/add', formData, {
+        setLoading(true);
+        await axios.post('https://real-estate-by-rohit-team14.onrender.com/add', formData, {
             headers: {
                 authorization: localStorage.getItem('token')
             }
@@ -62,7 +64,7 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
         }).catch(function (error) {
             alert(error)
-        });
+        }).finally(() => setLoading(false))
     }
 
 
@@ -82,12 +84,13 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
                     <h4 className="addANewProperty">
                         Add new Property
                     </h4>
+                    
 
                     <div className="progress">
 
                         <div className="BasicInfo" onClick={ () => {
                             setIsTogle(prev => {
-                                console.log('basic')
+
                                 return {
                                     BasicInfo: true,
                                     propertyDetails: false,
@@ -102,7 +105,7 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
                         <div className="PropertyDetail" onClick={ () => {
                             setIsTogle(prev => {
-                                console.log('property')
+
                                 return {
                                     BasicInfo: false,
                                     propertyDetails: true,
@@ -116,7 +119,7 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
                         </div>
 
                         <div className="GeneralInfo" onClick={ () => {
-                            console.log('general')
+
                             setIsTogle(prev => {
                                 return {
                                     BasicInfo: false,
@@ -131,7 +134,7 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
                         </div>
 
                         <div className="LocationInfo" onClick={ () => {
-                            console.log('location')
+
                             setIsTogle(prev => {
                                 return {
                                     BasicInfo: false,
@@ -141,7 +144,7 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                 }
                             })
                         } } style={ { backgroundColor: isTogle.LocationInfo ? '#6AB4F8' : "white", color: isTogle.LocationInfo ? "white" : "#AAAAAA" } }>
-                            <p>3</p>&nbsp;&nbsp;
+                            <p>4</p>&nbsp;&nbsp;
                             <p>Location Info</p>
                         </div>
 
@@ -195,9 +198,9 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                 <input type="text" placeholder='Longitude'
                                     onChange={ (e) => { setFormData({ ...formData, longitude: e.target.value }); } }
                                     value={ formData.longitude } />
-
+                                
                             </div>
-
+                            {isLoading && <Loading />}
                             <div className="buttonBox">
 
                                 <button className="Previous" onClick={ (e) => {
@@ -208,9 +211,10 @@ function LocationInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
 
                                 } }>Previous</button>
-
+                                
                                 <button className="Add Property" onClick={ addProperty } > Add Property </button>
 
+                            
                             </div>
 
                         </form>

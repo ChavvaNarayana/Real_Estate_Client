@@ -3,11 +3,13 @@ import './Signup.css';
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
 import { BsEyeFill } from 'react-icons/bs';
-import logo from "../images/Logo.png";
-const apiUrl = 'http://localhost:5000/register'
+import logo from "../../images/Logo.png";
+import Loading from '../Loading';
+const apiUrl = 'https://real-estate-by-rohit-team14.onrender.com/register'
 const Signup = () => {
     const navigate = useNavigate()
     const [err, setErr] = useState('');
+    const [isLoading, setLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const [data, setData] = useState({
         username: '',
@@ -49,6 +51,7 @@ const Signup = () => {
             return
         }
         setErr('')
+        setLoading(true)
         await axios.post(apiUrl, { data })
             .then(res => res.data)
             .then(data => {
@@ -63,6 +66,7 @@ const Signup = () => {
                 else setErr('Something"s wrong, Try again')
                 console.log(err);
             })
+            .finally(() => setLoading(false))
     }
 
     return (
@@ -77,6 +81,7 @@ const Signup = () => {
                         <BsEyeFill id='register-eye' className='register-eye' size={ 20 } color='#DFDFDF' onClick={ handlePass } />
                         <input className='focus' type="password" name='password' id='register-password' placeholder='Password' value={ data.password } onChange={ changeHandler } minLength={ 6 } /><br />
                         <input className='focus' type="Password" name='confirmPassword' placeholder='Confirm Password' value={ data.confirmPassword } onChange={ changeHandler } /><br />
+                        { isLoading && <Loading /> }
                         <button type="submit" className="submit-button scale-onhover">Sign Up</button>
                         <p style={ { color: 'red' } }>{ err }</p>
                     </form>
