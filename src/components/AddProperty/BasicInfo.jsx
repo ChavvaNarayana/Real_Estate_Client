@@ -22,22 +22,22 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
 
                         <div className="BasicInfo" onClick={ () => {
                             setIsTogle(prev => {
-                                console.log('basic')
+
                                 return {
                                     BasicInfo: true,
                                     propertyDetails: false,
                                     GeneralInfo: false,
-                                    LocationInfo:false
+                                    LocationInfo: false
                                 }
-                        })
-                        }} style={ { backgroundColor: isTogle.BasicInfo ? '#6AB4F8' : "white", color: isTogle.BasicInfo ? 'white' : "#AAAAAA" } }>
+                            })
+                        } } style={ { backgroundColor: isTogle.BasicInfo ? '#6AB4F8' : "white", color: isTogle.BasicInfo ? 'white' : "#AAAAAA" } }>
                             <p>1</p> &nbsp;&nbsp;
                             <p>Basic Info</p>
                         </div>
 
                         <div className="PropertyDetail" onClick={ () => {
                             setIsTogle(prev => {
-                                console.log('property')
+
                                 return {
                                     BasicInfo: false,
                                     propertyDetails: true,
@@ -45,13 +45,13 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                     LocationInfo: false
                                 }
                             })
-                        } } style={ { backgroundColor: isTogle.propertyDetails ? '#6AB4F8' : "white",color: isTogle.propertyDetails ? "white" : "#AAAAAA" } }>
+                        } } style={ { backgroundColor: isTogle.propertyDetails ? '#6AB4F8' : "white", color: isTogle.propertyDetails ? "white" : "#AAAAAA" } }>
                             <p>2</p>&nbsp;&nbsp;
                             <p>Property  Detail</p>
                         </div>
 
                         <div className="GeneralInfo" onClick={ () => {
-                            console.log('general')
+
                             setIsTogle(prev => {
                                 return {
                                     BasicInfo: false,
@@ -66,7 +66,7 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                         </div>
 
                         <div className="LocationInfo" onClick={ () => {
-                            console.log('location')
+
                             setIsTogle(prev => {
                                 return {
                                     BasicInfo: false,
@@ -76,7 +76,7 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                 }
                             })
                         } } style={ { backgroundColor: isTogle.LocationInfo ? '#6AB4F8' : "white", color: isTogle.LocationInfo ? "white" : "#AAAAAA" } }>
-                            <p>3</p>&nbsp;&nbsp;
+                            <p>4</p>&nbsp;&nbsp;
                             <p>Location Info</p>
                         </div>
 
@@ -85,16 +85,16 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                         <form action="">
                             <div className="leftFormBox">
                                 <label htmlFor="Property-Type">Property Type *</label>
-                                <select name="Property-Type" id="Property-Type" onChange={(e) => {
+                                <select name="Property-Type" id="Property-Type" onChange={ (e) => {
                                     setFormData({ ...formData, propertyType: e.target.value });
-                                }}
-                                    value={formData.propertyType} required
+                                } }
+                                    value={ formData.propertyType } required
                                 >
                                     <option value="" disabled selected>Select Property Type</option>
                                     <option >Plot</option>
-                                    
-                                    
-                                    <option >Houlse</option>
+
+
+                                    <option >House</option>
                                     <option >Apartment</option>
                                     <option >Bungalow</option>
                                     <option >Villa</option>
@@ -102,19 +102,19 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                 <label htmlFor='price'>Price</label>
 
                                 <input type="" id='price' placeholder='Example: 10000'
-                                    onChange={(e) => {
+                                    onChange={ (e) => {
                                         setFormData({ ...formData, price: e.target.value });
-                                    }}
-                                    value={formData.price}
+                                    } }
+                                    value={ formData.price }
                                 />
 
                                 <label htmlFor='Property Age'
                                 >Property Age</label>
                                 <select name="Property Age" id='Property Age'
-                                    onChange={(e) => {
+                                    onChange={ (e) => {
                                         setFormData({ ...formData, propertyAge: e.target.value });
-                                    }}
-                                    value={formData.propertyAge}
+                                    } }
+                                    value={ formData.propertyAge }
                                 >
                                     <option value="" disabled selected>Select Property Age</option>
                                     <option >Less than 5 years</option>
@@ -123,19 +123,19 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                 <label htmlFor='Property Description'>Property Description
                                 </label>
                                 <input type="text" id='Property Description'
-                                    onChange={(e) => {
+                                    onChange={ (e) => {
                                         setFormData({ ...formData, propertyDescription: e.target.value });
-                                    }}
-                                    value={formData.propertyDescription}
+                                    } }
+                                    value={ formData.propertyDescription }
                                 />
                             </div>
                             <div className="rightFormBox">
                                 <label htmlFor='Negotiable'>Negotiable</label>
                                 <select name="Negotiable" id='Negotiable'
-                                    onChange={(e) => {
+                                    onChange={ (e) => {
                                         setFormData({ ...formData, negotable: e.target.value });
-                                    }}
-                                    value={formData.negotable}
+                                    } }
+                                    value={ formData.negotable }
                                 >
                                     <option value="" disabled selected>Negotiable</option>
                                     <option >Yes</option>
@@ -143,10 +143,10 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                 </select>
                                 <label htmlFor='ownership'>Ownership</label>
                                 <select name="ownership" id='ownership'
-                                    onChange={(e) => {
+                                    onChange={ (e) => {
                                         setFormData({ ...formData, ownership: e.target.value });
-                                    }}
-                                    value={formData.ownership}
+                                    } }
+                                    value={ formData.ownership }
                                 >
                                     <option value="" disabled selected>Select Ownership</option>
                                     <option >Individual</option>
@@ -154,10 +154,10 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                 </select>
                                 <label htmlFor='Property Approved'>Property Approved</label>
                                 <select name="Property Approved" id='Property Approved'
-                                    onChange={(e) => {
+                                    onChange={ (e) => {
                                         setFormData({ ...formData, propertyApproved: e.target.value });
-                                    }}
-                                    value={formData.propertyApproved}
+                                    } }
+                                    value={ formData.propertyApproved }
                                 >
                                     <option value="" disabled selected>Select Property Approved</option>
                                     <option >Yes</option>
@@ -165,10 +165,10 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                 </select>
                                 <label htmlFor='Bank Loan'>Bank Loan</label>
                                 <select name="Bank Loan" id='Bank Loan'
-                                    onChange={(e) => {
+                                    onChange={ (e) => {
                                         setFormData({ ...formData, bankLoan: e.target.value });
-                                    }}
-                                    value={formData.bankLoan}
+                                    } }
+                                    value={ formData.bankLoan }
                                 >
                                     <option value="" disabled selected>Select Bank Loan</option>
                                     <option >Yes</option>
@@ -178,7 +178,7 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                             </div>
 
                             <div className="buttonBox">
-                                <button className="cancel" onClick={() => {
+                                <button className="cancel" onClick={ () => {
                                     setFormData({
                                         propertyType: "",
                                         negotiable: "",
@@ -217,10 +217,10 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                         longitude: ""
                                     })
                                     navigate('/')
-                                }}>Cancel</button>
+                                } }>Cancel</button>
 
                                 <button className="save"
-                                    onClick={(e) => {
+                                    onClick={ (e) => {
                                         e.preventDefault();
                                         if (formData.propertyType === "") {
                                             alert("PropertyType is a Mandatory Field")
@@ -233,7 +233,7 @@ function BasicInfo({ formData, setFormData, isTogle, setIsTogle }) {
                                             console.log(formData, isTogle)
                                             navigate('/add')
                                         }
-                                    }}>Save &#38; continue</button>
+                                    } }>Save &#38; continue</button>
 
                             </div>
 
